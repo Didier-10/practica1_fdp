@@ -1,0 +1,50 @@
+//
+//  ViewController.swift
+//  ColorMix
+//
+//  Created by 2020-1 on 9/3/19.
+//  Copyright © 2019 unam. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var Colorview: UIView!
+    @IBOutlet weak var Redswitch: UISwitch!
+    @IBOutlet weak var Greenswitch: UISwitch!
+    @IBOutlet weak var Blueswitch: UISwitch!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updatecolors()
+        
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func SwitchChanged(_ sender: UISwitch!) {
+        updatecolors()
+        /*if sender.isOn {
+        Colorview.backgroundColor = .red
+        }else{
+        Colorview.backgroundColor = .black
+    }*/
+}
+    func updatecolors() {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        if Redswitch .isOn{
+            red = 1
+        }
+        if Greenswitch .isOn {
+            green = 1
+        }
+        if Blueswitch .isOn {
+            blue = 1
+        }
+        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        Colorview.backgroundColor = color
+    }
+}
